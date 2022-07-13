@@ -1,8 +1,8 @@
 import JSConfetti from 'js-confetti'
+import coinico from "./assets/coin.png";
+import billico from "./assets/bill.png";
 
-const JsConfetti = new JSConfetti()
-// const MyPromise = require('some-promise-lib');
-// const confetti = require('canvas-confetti');
+const jsConfetti = new JSConfetti();
 const coin_btn = document.getElementById("btncoin");
 const bill_btn = document.getElementById("btnbill");
 const wallet_img = document.getElementById("wallet");
@@ -19,18 +19,18 @@ function updateMoney(value){
     money.textContent = newValue;
 
     if(newValue > targetRich){
-      JsConfetti.addConfetti();
+      jsConfetti.addConfetti();
     }
 }
 
 coin_btn.addEventListener("click",function() {
-    let iconcoin = `<img class="icon" src="${'assets/coin.png'}" />`
+    let iconcoin = `<img class="icon" src="${coinico}" />`
     wallet_img.insertAdjacentHTML('beforeend',iconcoin);
     updateMoney(10);
 });
 
 bill_btn.addEventListener('click',function () {
-    let iconbill = `<img class="icon" src="${'assets/bill.png'}" />`
+    let iconbill = `<img class="icon" src="${billico}" />`
     wallet_img.insertAdjacentHTML('beforeend',iconbill);
     updateMoney(100);
 });
