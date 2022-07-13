@@ -1,6 +1,8 @@
 import JSConfetti from 'js-confetti'
 
 const JsConfetti = new JSConfetti()
+// const MyPromise = require('some-promise-lib');
+// const confetti = require('canvas-confetti');
 const coin_btn = document.getElementById("btncoin");
 const bill_btn = document.getElementById("btnbill");
 const wallet_img = document.getElementById("wallet");
@@ -17,7 +19,7 @@ function updateMoney(value){
     money.textContent = newValue;
 
     if(newValue > targetRich){
-      jsConfetti.addConfetti()
+      JsConfetti.addConfetti();
     }
 }
 
